@@ -77,9 +77,9 @@ def update():
         weigthedopinioncount = 0
         weightcount = 0
         for neighbor in G.neighbors(node):
-            weightedopinion = pow(G[node][neighbor]['weight'], 0.5) * G.nodes[neighbor]['state']
+            weightedopinion = pow(G[node][neighbor]['weight'], 0.5) * G.nodes[neighbor]['state'] #adjust influence parameter rho here
             weigthedopinioncount += weightedopinion
-            weightcount += pow(G[node][neighbor]['weight'], 0.5)
+            weightcount += pow(G[node][neighbor]['weight'], 0.5) #adjust influence parameter rho here
         if weightcount == 0:
             continue #if there are no neighbors that are in the any of the matching circles, there will be no impact on the node
         else:
